@@ -1,0 +1,3 @@
+This repository demonstrates a common error in Dockerfiles involving the use of the `&&` operator within the `CMD` instruction. The original Dockerfile attempts to install a Python package and then run the application using the `&&` operator to chain the commands. However, this approach is flawed as it attempts to execute all commands as a single shell command which can lead to unexpected behavior and failure.
+
+The solution shows the correct method which leverages multi-stage build and separate `RUN` and `CMD` instructions for a cleaner and more reliable execution.
